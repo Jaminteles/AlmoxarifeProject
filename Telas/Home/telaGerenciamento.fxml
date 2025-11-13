@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="420" prefWidth="650" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+
+        <VBox alignment="TOP_CENTER" spacing="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+   <children>
+   
+               <!-- Botão Voltar no canto esquerdo -->
+               <HBox alignment="CENTER_LEFT">
+      <children>
+                      <Button fx:id="btnVoltar" style="-fx-font-size: 14px;" text="↩ Voltar" />
+      </children>
+               </HBox>
+   
+               <!-- Título -->
+               <Label style="-fx-font-size: 26px; -fx-font-weight: bold;" text="ALMOXARIFADO" />
+   
+               <!-- Grid com os módulos -->
+               <GridPane alignment="CENTER" hgap="20" prefHeight="269.0" prefWidth="610.0" vgap="40.0">
+                   <columnConstraints>
+                       <ColumnConstraints percentWidth="50" />
+                       <ColumnConstraints percentWidth="50" />
+                   </columnConstraints>
+   
+                   <children>
+   
+                       <!-- Coluna Esquerda -->
+                       <Button fx:id="btnTelaEstoque" maxWidth="Infinity" style="-fx-font-size: 16px;" text="Módulo de Itens (Estoque)" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+   
+                       <Button fx:id="btnTelaMovimentacao" maxWidth="Infinity" style="-fx-font-size: 16px;" text="Entradas e Saídas" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+   
+                       <Button fx:id="btnTelaObras" maxWidth="Infinity" style="-fx-font-size: 16px;" text="Obras" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+   
+                       <!-- Coluna Direita -->
+                       <Button fx:id="btnDashboard" maxWidth="Infinity" style="-fx-font-size: 16px;" text="Relatórios &amp; Dashboard" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+   
+                       <Button fx:id="btnTelaFornecedores" maxWidth="Infinity" style="-fx-font-size: 16px;" text="Fornecedores" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   
+                       <Button fx:id="btnTelaGUsuario" maxWidth="Infinity" style="-fx-font-size: 16px;" text="Gerenciamento de Usuários" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   
+                   </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+               </GridPane>
+   </children>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PopupEditarController"
+            prefWidth="600" prefHeight="400"
+            style="-fx-background-color: rgba(0,0,0,0.45);">
+
+    <children>
+        <VBox alignment="CENTER" spacing="10"
+              AnchorPane.topAnchor="40" AnchorPane.leftAnchor="80"
+              AnchorPane.rightAnchor="80" AnchorPane.bottomAnchor="40"
+              style="-fx-background-color: white; -fx-padding: 15;
+                     -fx-background-radius: 6; -fx-border-radius: 6;">
+
+            <Label text="Editar Registro"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="30"/>
+                    <ColumnConstraints percentWidth="70"/>
+                </columnConstraints>
+
+                <children>
+                    <Label text="Campo 1:" GridPane.rowIndex="0"/>
+                    <TextField fx:id="tfCampo1" GridPane.columnIndex="1"/>
+
+                    <Label text="Campo 2:" GridPane.rowIndex="1"/>
+                    <TextField fx:id="tfCampo2" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Campo 3:" GridPane.rowIndex="2"/>
+                    <TextField fx:id="tfCampo3" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="btnSalvarAlteracoes" text="Salvar Alterações"/>
+                <Button fx:id="btnCancelar" text="Cancelar"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

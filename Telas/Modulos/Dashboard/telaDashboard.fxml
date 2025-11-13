@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.RelatoriosController"
+            prefWidth="1000" prefHeight="650">
+
+    <children>
+        <VBox spacing="12"
+              AnchorPane.topAnchor="10"
+              AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10"
+              AnchorPane.bottomAnchor="10">
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Relatórios &amp; Dashboard"
+                       style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label text="Período:"/>
+                <DatePicker fx:id="dpFrom" promptText="De"/>
+                <DatePicker fx:id="dpTo" promptText="Até"/>
+                <ComboBox fx:id="cbCategoryFilter" promptText="Categoria"/>
+                <Button fx:id="btnApplyFilters" text="Aplicar"/>
+                <Button fx:id="btnExportReport" text="Exportar PDF"/>
+            </HBox>
+
+            <HBox spacing="12">
+
+                <!-- KPIs -->
+                <VBox spacing="10" prefWidth="360">
+
+                    <TitledPane text="KPIs" expanded="true">
+                        <content>
+                            <VBox spacing="8">
+                                <padding>
+                                    <Insets top="8" right="8" bottom="8" left="8"/>
+                                </padding>
+
+                                <HBox spacing="6" alignment="CENTER_LEFT">
+                                    <Label text="Total de itens:"/>
+                                    <Label fx:id="lblTotalItems" text="0"/>
+                                </HBox>
+                                <HBox spacing="6" alignment="CENTER_LEFT">
+                                    <Label text="Fornecedores:"/>
+                                    <Label fx:id="lblTotalSuppliers" text="0"/>
+                                </HBox>
+                                <HBox spacing="6" alignment="CENTER_LEFT">
+                                    <Label text="Itens abaixo do mínimo:"/>
+                                    <Label fx:id="lblLowStock" text="0"/>
+                                </HBox>
+                                <HBox spacing="6" alignment="CENTER_LEFT">
+                                    <Label text="Movimentações:"/>
+                                    <Label fx:id="lblMovements" text="0"/>
+                                </HBox>
+                                <HBox spacing="6" alignment="CENTER_LEFT">
+                                    <Label text="Gastos:"/>
+                                    <Label fx:id="lblTotalCosts" text="R$ 0,00"/>
+                                </HBox>
+                            </VBox>
+                        </content>
+                    </TitledPane>
+
+                    <TitledPane text="Relatórios rápidos" expanded="true">
+                        <content>
+                            <VBox spacing="6">
+                                <padding>
+                                    <Insets top="8" right="8" bottom="8" left="8"/>
+                                </padding>
+
+                                <Button fx:id="btnReportItems" text="Relatório de Itens" maxWidth="Infinity"/>
+                                <Button fx:id="btnReportMovements" text="Relatório de Movimentações" maxWidth="Infinity"/>
+                                <Button fx:id="btnReportBySupplier" text="Relatório por Fornecedor" maxWidth="Infinity"/>
+                            </VBox>
+                        </content>
+                    </TitledPane>
+
+                </VBox>
+
+                <!-- Charts -->
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+
+                    <TabPane>
+                        <tabs>
+                            <Tab text="Itens mais usados">
+                                <content>
+                                    <BarChart fx:id="chartTopItems"
+                                              title="Top 10 Itens"
+                                              prefHeight="220" prefWidth="560">
+                                        <xAxis><CategoryAxis/></xAxis>
+                                        <yAxis><NumberAxis/></yAxis>
+                                    </BarChart>
+                                </content>
+                            </Tab>
+
+                            <Tab text="Categorias">
+                                <content>
+                                    <PieChart fx:id="chartCategories" prefHeight="220" prefWidth="560"/>
+                                </content>
+                            </Tab>
+
+                            <Tab text="Movimentações">
+                                <content>
+                                    <LineChart fx:id="chartMovements"
+                                               title="Movimentações"
+                                               prefHeight="220" prefWidth="560">
+                                        <xAxis><CategoryAxis/></xAxis>
+                                        <yAxis><NumberAxis/></yAxis>
+                                    </LineChart>
+                                </content>
+                            </Tab>
+                        </tabs>
+                    </TabPane>
+
+                    <TableView fx:id="tableReport" prefHeight="200">
+                        <columns>
+                            <TableColumn fx:id="rCol1" text="Campo 1" prefWidth="160"/>
+                            <TableColumn fx:id="rCol2" text="Campo 2" prefWidth="160"/>
+                            <TableColumn fx:id="rCol3" text="Campo 3" prefWidth="160"/>
+                            <TableColumn fx:id="rCol4" text="Campo 4" prefWidth="160"/>
+                            <TableColumn fx:id="rCol5" text="Campo 5" prefWidth="160"/>
+                        </columns>
+                    </TableView>
+
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

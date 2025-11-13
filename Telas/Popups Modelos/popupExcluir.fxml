@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PopupExcluirController"
+            prefWidth="500" prefHeight="250"
+            style="-fx-background-color: rgba(0,0,0,0.45);">
+
+    <children>
+        <VBox alignment="CENTER" spacing="15"
+              AnchorPane.topAnchor="40" AnchorPane.leftAnchor="80"
+              AnchorPane.rightAnchor="80" AnchorPane.bottomAnchor="40"
+              style="-fx-background-color: white; -fx-padding: 15;
+                     -fx-background-radius: 6; -fx-border-radius: 6;">
+
+            <Label text="Confirmar Exclusão"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <Label fx:id="lblMensagem"
+                   text="Deseja realmente excluir este registro?"
+                   wrapText="true"
+                   style="-fx-font-size: 14px;"/>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="btnConfirmar" text="Sim" style="-fx-background-color: #c62828; -fx-text-fill: white;"/>
+                <Button fx:id="btnCancelar" text="Não"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>
