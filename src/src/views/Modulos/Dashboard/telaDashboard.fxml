@@ -73,8 +73,10 @@
                                 </padding>
 
                                 <Button fx:id="btnReportItems" text="Relatório de Itens" maxWidth="Infinity"/>
-                                <Button fx:id="btnReportMovements" text="Relatório de Movimentações" maxWidth="Infinity"/>
-                                <Button fx:id="btnReportBySupplier" text="Relatório por Fornecedor" maxWidth="Infinity"/>
+                                <Button fx:id="btnReportMovements" text="Relatório de Movimentações"
+                                        maxWidth="Infinity"/>
+                                <Button fx:id="btnReportBySupplier" text="Relatório por Fornecedor"
+                                        maxWidth="Infinity"/>
                             </VBox>
                         </content>
                     </TitledPane>
@@ -91,8 +93,12 @@
                                     <BarChart fx:id="chartTopItems"
                                               title="Top 10 Itens"
                                               prefHeight="220" prefWidth="560">
-                                        <xAxis><CategoryAxis/></xAxis>
-                                        <yAxis><NumberAxis/></yAxis>
+                                        <xAxis>
+                                            <CategoryAxis/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis/>
+                                        </yAxis>
                                     </BarChart>
                                 </content>
                             </Tab>
@@ -108,8 +114,12 @@
                                     <LineChart fx:id="chartMovements"
                                                title="Movimentações"
                                                prefHeight="220" prefWidth="560">
-                                        <xAxis><CategoryAxis/></xAxis>
-                                        <yAxis><NumberAxis/></yAxis>
+                                        <xAxis>
+                                            <CategoryAxis/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis/>
+                                        </yAxis>
                                     </LineChart>
                                 </content>
                             </Tab>

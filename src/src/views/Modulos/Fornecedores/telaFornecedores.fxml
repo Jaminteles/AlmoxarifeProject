@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.FornecedorController">
+
+    <children>
+        <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.topAnchor="10.0">
+            <children>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Fornecedores"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="searchSupplier" prefHeight="25.0" prefWidth="241.0"
+                                   promptText="Buscar por nome, CNPJ ou item fornecido"/>
+                        <Button fx:id="btnSearchSupplier" text="Buscar"/>
+                    </children>
+                </HBox>
+
+                <TableView fx:id="tableSuppliers" prefHeight="460.0">
+                    <columns>
+                        <TableColumn fx:id="colSupId" prefWidth="60.0" text="ID"/>
+                        <TableColumn fx:id="colSupName" prefWidth="220.0" text="Nome/Razão Social"/>
+                        <TableColumn fx:id="colSupCnpj" prefWidth="140.0" text="CNPJ"/>
+                        <TableColumn fx:id="colSupPhone" prefWidth="120.0" text="Telefone"/>
+                        <TableColumn fx:id="colSupEmail" prefWidth="160.0" text="E-mail"/>
+                        <TableColumn fx:id="colSupCity" prefWidth="120.0" text="Cidade/UF"/>
+                        <TableColumn fx:id="colSupStatus" prefWidth="59.0" text="Status"/>
+                    </columns>
+                </TableView>
+
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="btnNewSupplier" text="Adicionar fornecedor">
+                            <HBox.margin>
+                                <Insets right="540.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnEditSupplier" text="Editar"/>
+                        <Button fx:id="btnDeleteSupplier" text="Excluir"/>
+                        <Button fx:id="btnExportSuppliers" text="Exportar CSV"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Modal -->
+        <AnchorPane fx:id="paneEditSupplier" style="-fx-background-color: rgba(0,0,0,0.35);" visible="false"
+                    AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+                    AnchorPane.topAnchor="0">
+
+            <children>
+                <VBox alignment="CENTER" spacing="8.0"
+                      style="-fx-background-color: #ffffff; -fx-padding: 15;                              -fx-border-radius: 6; -fx-background-radius: 6;"
+                      AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0"
+                      AnchorPane.topAnchor="40.0">
+                    <children>
+
+                        <Label fx:id="lblSupplierFormTitle" style="-fx-font-size: 16px; -fx-font-weight: bold;"
+                               text="Cadastrar Fornecedor"/>
+
+                        <GridPane hgap="10" vgap="8">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="30"/>
+                                <ColumnConstraints percentWidth="70"/>
+                            </columnConstraints>
+
+                            <children>
+                                <Label text="Razão Social:" GridPane.rowIndex="0"/>
+                                <TextField fx:id="tfSupplierName" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                                <Label text="CNPJ:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfSupplierCnpj" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                <Label text="Inscrição Estadual:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfSupplierIE" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                                <Label text="Telefone:" GridPane.rowIndex="3"/>
+                                <TextField fx:id="tfSupplierPhone" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                                <Label text="E-mail:" GridPane.rowIndex="4"/>
+                                <TextField fx:id="tfSupplierEmail" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                                <Label text="Rua:" GridPane.rowIndex="5"/>
+                                <TextField fx:id="tfSupplierStreet" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                                <Label text="Número:" GridPane.rowIndex="6"/>
+                                <TextField fx:id="tfSupplierNumber" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                                <Label text="Bairro:" GridPane.rowIndex="7"/>
+                                <TextField fx:id="tfSupplierNeighborhood" GridPane.columnIndex="1"
+                                           GridPane.rowIndex="7"/>
+
+                                <Label text="Cidade:" GridPane.rowIndex="8"/>
+                                <TextField fx:id="tfSupplierCity" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+                                <Label text="UF:" GridPane.rowIndex="9"/>
+                                <TextField fx:id="tfSupplierState" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+                                <Label text="CEP:" GridPane.rowIndex="10"/>
+                                <TextField fx:id="tfSupplierCep" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+                                <Label text="Contato:" GridPane.rowIndex="11"/>
+                                <TextField fx:id="tfSupplierContact" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+                            </children>
+                            <rowConstraints>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                        </GridPane>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                            <children>
+                                <Button fx:id="btnSaveSupplier" text="Salvar"/>
+                                <Button fx:id="btnCancelSupplier" text="Cancelar"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
