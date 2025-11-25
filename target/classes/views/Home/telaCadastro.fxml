@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/20"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.CadastroController"
+            prefWidth="550" prefHeight="420">
+
+    <children>
+
+        <VBox alignment="CENTER" spacing="15"
+              AnchorPane.topAnchor="20"
+              AnchorPane.leftAnchor="40"
+              AnchorPane.rightAnchor="40"
+              AnchorPane.bottomAnchor="20"
+              style="-fx-background-color: #FFFFFF; -fx-padding: 20;
+                     -fx-background-radius: 10">
+
+            <Label text="Cadastro de Usuário"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+            <GridPane hgap="15" vgap="12" maxWidth="350">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="35"/>
+                    <ColumnConstraints percentWidth="65"/>
+                </columnConstraints>
+
+                <children>
+
+                    <Label text="Nome:" GridPane.rowIndex="0"/>
+                    <TextField fx:id="tfNome" GridPane.columnIndex="1"/>
+
+                    <Label text="Login:" GridPane.rowIndex="1"/>
+                    <TextField fx:id="tfLogin" GridPane.columnIndex="1"/>
+
+                    <Label text="Senha:" GridPane.rowIndex="2"/>
+                    <PasswordField fx:id="tfSenha" GridPane.columnIndex="1"/>
+
+                    <Label text="Nível:" GridPane.rowIndex="3"/>
+                    <ComboBox fx:id="cbNivel" GridPane.columnIndex="1"/>
+
+                    <Label text="Status:" GridPane.rowIndex="4"/>
+                    <ComboBox fx:id="cbStatus" GridPane.columnIndex="1"/>
+
+                </children>
+            </GridPane>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="btnSalvar" text="Salvar"
+                        style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                <Button fx:id="btnCancelar" text="Cancelar"/>
+            </HBox>
+
+        </VBox>
+
+    </children>
+</AnchorPane>

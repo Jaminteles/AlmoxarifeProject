@@ -1,4 +1,4 @@
-package dao;
+/*package dao;
 
 public class UsuarioDAO {
 
@@ -14,3 +14,4 @@ public class UsuarioDAO {
 
     public List<Usuario> listarTodos() { ... }
 }
+*/
