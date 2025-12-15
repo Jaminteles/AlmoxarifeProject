@@ -32,14 +32,14 @@
 
                 <HBox alignment="CENTER_RIGHT" spacing="10">
                     <children>
-                        <Button fx:id="btnNewUser" text="Novo Usuário">
+                        <Button fx:id="btnNewUser" prefHeight="25.0" prefWidth="195.0" text="Cadastrar Novo Funcionário">
                             <HBox.margin>
                                 <Insets />
                             </HBox.margin>
                         </Button>
                         <Button fx:id="btnSearchUser" text="Pesquisar">
                             <HBox.margin>
-                                <Insets right="597.0" />
+                                <Insets right="492.0" />
                             </HBox.margin>
                         </Button>
                         <Button fx:id="btnEditUser" text="Editar" />
